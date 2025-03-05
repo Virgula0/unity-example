@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - LogicTag
+  - GameAreaTag
   layers:
   - Default
   - TransparentFX

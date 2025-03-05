@@ -31,5 +31,4 @@ public class LogicManager : MonoBehaviour
     public void gameOver(){
         gameOverScreen.SetActive(true);
     }
-
 }

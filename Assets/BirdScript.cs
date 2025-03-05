@@ -36,9 +36,9 @@ public class BirdScript : MonoBehaviour
         myRigidBody.linearVelocity = Input.GetKeyDown(KeyCode.Space) && this.birdIsAlive ? Vector2.up * this.moveFloat : myRigidBody.linearVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-        logic.gameOver();
-        this.birdIsAlive = false;
+    private void OnTriggerEnter2D(Collider2D collision){ // On trigger exit and stay arre also available
+        if (collision.gameObject.layer == 3){ // 3 stands for the bird we want actually check that is the bird object to pass through the pipe
+            logic.gameOver();
+        }
     }
-
 }
