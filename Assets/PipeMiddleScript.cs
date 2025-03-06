@@ -11,7 +11,7 @@ public class PipeMiddleScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){ // On trigger exit and stay arre also available
-        if (collision.gameObject.layer == 3){ // 3 stands for the bird we want actually check that is the bird object to pass through the pipe
+        if (collision.gameObject.layer == (int)Utils.Objects.Bird){ // 3 stands for the bird we want actually check that is the bird object to pass through the pipe
             logic.addScore(1);
         }
     }

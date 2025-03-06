@@ -30,15 +30,19 @@ public class BirdScript : MonoBehaviour
         // For debugging purposes we cannot use Console.WriteLine we have to use Debug unity 
         // library Debug.Log(myRigidBody.velocity);
         // myRigidBody.linearVelocity = Vector2.up * 10; //  we move to y axis the bird (so vertically)
-        
+
         // difference between getkeydown and getkeyup is that the first behavios in pressure
         // the latter is appplied when the key is released
         myRigidBody.linearVelocity = Input.GetKeyDown(KeyCode.Space) && this.birdIsAlive ? Vector2.up * this.moveFloat : myRigidBody.linearVelocity;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision){ // On trigger exit and stay arre also available
-        if (collision.gameObject.layer == 3){ // 3 stands for the bird we want actually check that is the bird object to pass through the pipe
+    // for some reason these methods do not need to be public, Start and Update are private as well without keyword
+    // explicitly declared
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.layer == (int)Utils.Objects.Pipe){
+            Debug.Log("collided!");
             logic.gameOver();
+            birdIsAlive = false;
         }
     }
 }
