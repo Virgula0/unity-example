@@ -13,11 +13,16 @@ public class LogicManager : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public GameObject gameAreaPrefab;
+    private BirdScript birdReference;
 
     [ContextMenu("IncreaseScore") ] // this let the function to be run from unity, this will be found as function in the 3 dot in logic script in inspector to check the increase for debugging
     public void addScore(int score){
         playerScore += score;
         scoreText.text = $"{playerScore}";
+    }
+
+    public void setBirdInstance(BirdScript bird){
+        this.birdReference = bird;
     }
 
     public void restartGame(){
@@ -33,5 +38,6 @@ public class LogicManager : MonoBehaviour
 
     public void gameOver(){
         gameOverScreen.SetActive(true);
+        this.birdReference.birdIsAlive = false;
     }
 }
