@@ -12,6 +12,9 @@ public class BirdScript : MonoBehaviour
     public LogicManager logic; // refers to our previous logic manager
     public bool birdIsAlive = true;
 
+    [SerializeField] // we do not break visibility and we let this to be available in unity inspector
+    private AudioSource wingFlaps;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     // Start is for any code that runs as soon as the script is loaded.
     // So it is called once 
@@ -34,6 +37,7 @@ public class BirdScript : MonoBehaviour
         // difference between getkeydown and getkeyup is that the first behavios in pressure
         // the latter is appplied when the key is released
         if (Input.GetKeyDown(KeyCode.Space) && this.birdIsAlive) {
+            wingFlaps.Play();
             myRigidBody.linearVelocity = Vector2.up * this.moveFloat;
         }
     }

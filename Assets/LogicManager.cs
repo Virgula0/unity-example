@@ -15,6 +15,9 @@ public class LogicManager : MonoBehaviour
     public GameObject gameAreaPrefab;
     private BirdScript birdReference;
 
+    [SerializeField] 
+    private AudioSource deathSound;
+
     [ContextMenu("IncreaseScore") ] // this let the function to be run from unity, this will be found as function in the 3 dot in logic script in inspector to check the increase for debugging
     public void addScore(int score){
         playerScore += score;
@@ -26,6 +29,7 @@ public class LogicManager : MonoBehaviour
     }
 
     public void restartGame(){
+        // Reloading the scene create new instances for each game object within the scene itself
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload the current scene
     }
 
@@ -37,6 +41,9 @@ public class LogicManager : MonoBehaviour
     }
 
     public void gameOver(){
+        if (birdReference.birdIsAlive){
+            deathSound.Play();
+        }
         gameOverScreen.SetActive(true);
         this.birdReference.birdIsAlive = false;
     }
