@@ -1,5 +1,11 @@
 using UnityEngine;
 
+/*
+    This is to operate on images within a canvas.
+    At the moment this script is only for learning pruposes and it is not used.
+    Instead, we used material with mesh to create a real background feeling.
+*/
+
 public class BackgroundScript : MonoBehaviour
 {
     public float moveSpeed = 3f;
