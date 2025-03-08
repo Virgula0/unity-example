@@ -16,7 +16,7 @@ public class PipeMoveScript : MonoBehaviour
     {
 
         if (transform.position.x < deadZone){
-            Debug.Log("Pipe Deleted");
+            //Debug.Log("Pipe Deleted");
             Destroy(gameObject); // destroy the game object that holds the script
         }
 

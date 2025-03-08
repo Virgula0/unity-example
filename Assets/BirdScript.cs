@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class BirdScript : MonoBehaviour
@@ -34,7 +33,6 @@ public class BirdScript : MonoBehaviour
 
         // difference between getkeydown and getkeyup is that the first behavios in pressure
         // the latter is appplied when the key is released
-
         if (Input.GetKeyDown(KeyCode.Space) && this.birdIsAlive) {
             myRigidBody.linearVelocity = Vector2.up * this.moveFloat;
         }

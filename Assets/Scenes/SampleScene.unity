@@ -580,6 +580,7 @@ GameObject:
   - component: {fileID: 852763283}
   - component: {fileID: 852763285}
   - component: {fileID: 852763284}
+  - component: {fileID: 852763286}
   m_Layer: 5
   m_Name: Mountain
   m_TagString: Untagged
@@ -603,8 +604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1283.25, y: -391.32996}
-  m_SizeDelta: {x: 2566.5, y: -782.67}
+  m_AnchoredPosition: {x: 1278.71, y: -364.57007}
+  m_SizeDelta: {x: 2557.43, y: -729.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852763284
 MonoBehaviour:
@@ -644,6 +645,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852763282}
   m_CullTransparentMesh: 1
+--- !u!114 &852763286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852763282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb12b9cf39d9226b9f0ef34c9725efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  repeatMountain: -15
 --- !u!1 &879939646
 GameObject:
   m_ObjectHideFlags: 0
