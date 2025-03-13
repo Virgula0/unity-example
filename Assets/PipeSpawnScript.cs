@@ -7,10 +7,12 @@ public class PipeSpawnScript : MonoBehaviour
     private float timer = 0;
     public float highOffset = 10;
 
+    private bool isActive = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnFunction(); // we do this at startup of the script in order to make the first pipe to spawn soon without waiting a lot of time before the first
+        //SpawnFunction(); // we do this at startup of the script in order to make the first pipe to spawn soon without waiting a lot of time before the first
     }
 
     private Vector3 RandomPosition(){
@@ -35,12 +37,20 @@ public class PipeSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate){
+        if (!isActive){
+            return;
+        }
+
+        if (timer < spawnRate ){
             // count the time
             timer += Time.deltaTime; // time.deltatime assure that behavios the same no metter which computer is running on
         }else{
             SpawnFunction();
             timer = 0; // reset the timer
         }
+    }
+
+    public void setActive(){
+        this.isActive = !isActive;
     }
 }
