@@ -42,6 +42,10 @@ public class BirdScript : MonoBehaviour
         }
     }
 
+    public Rigidbody2D getBirdRigidBody(){
+        return this.myRigidBody;
+    }
+
     // for some reason these methods do not need to be public, Start and Update are private as well without keyword
     // explicitly declared
     private void OnCollisionEnter2D(Collision2D collision)
