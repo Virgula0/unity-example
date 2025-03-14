@@ -20,9 +20,10 @@ public class BirdScript : MonoBehaviour
     // So it is called once 
     void Start()
     {
-        gameObject.name = "Bob Bird Renamed from the script";
-        logic = GameObject.FindGameObjectWithTag("LogicTag").GetComponent<LogicManager>(); // we need to do this at runtime because the object stil not exists
-        logic.setBirdInstance(this);
+        this.gameObject.name = "Bob Bird Renamed from the script";
+        this.myRigidBody.gravityScale = 5;
+        this.logic = GameObject.FindGameObjectWithTag("LogicTag").GetComponent<LogicManager>(); // we need to do this at runtime because the object stil not exists
+        this.logic.setBirdInstance(this);
     }
 
     // Update is called once per frame
@@ -40,10 +41,6 @@ public class BirdScript : MonoBehaviour
             wingFlaps.Play();
             myRigidBody.linearVelocity = Vector2.up * this.moveFloat;
         }
-    }
-
-    public Rigidbody2D getBirdRigidBody(){
-        return this.myRigidBody;
     }
 
     // for some reason these methods do not need to be public, Start and Update are private as well without keyword
