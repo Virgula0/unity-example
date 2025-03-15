@@ -13,12 +13,7 @@ public class LogicManager : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public GameObject gameAreaPrefab;
-
-    [SerializeField]
-    private PipeSpawnScript pipeSpawner;
-    public GameObject mainMenuScreen;
     private BirdScript birdReference;
-
     [SerializeField] 
     private AudioSource deathSound;
 
@@ -50,16 +45,5 @@ public class LogicManager : MonoBehaviour
         }
         gameOverScreen.SetActive(true);
         this.birdReference.birdIsAlive = false;
-        this.pipeSpawner.setActive();
-    }
-
-    public void play(){ //start the game
-        this.birdReference.getBirdRigidBody().gravityScale = 5;
-        mainMenuScreen.SetActive(false);
-        pipeSpawner.setActive();
-    }
-
-    public void exit(){ // return to desktop
-        Application.Quit();
     }
 }
