@@ -156,6 +156,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &428026852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7734104011664440445, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
+  m_PrefabInstance: {fileID: 1335126498827886960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +700,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4004308512666717571, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
   m_PrefabInstance: {fileID: 1335126498827886960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &929482291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428026852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fedb5124cb28cd4697644ae710590f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4521634595782343921, guid: 1ce4d45cec07ad74b8dfcea6f270bc8f, type: 3}
+  speed: 20
+  firingRate: 1
+  pipeSpawner: {fileID: 1885871625}
 --- !u!1 &943340568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6405,7 +6426,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: bead123acf06570939caf943828e426f, type: 3}
   m_Resource: {fileID: 8300000, guid: bead123acf06570939caf943828e426f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6687,6 +6708,14 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 4521634595782343921, guid: 1ce4d45cec07ad74b8dfcea6f270bc8f, type: 3}
+    - target: {fileID: 2841866441720323007, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 1885871626}
+    - target: {fileID: 2841866441720323007, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
+      propertyPath: pipeSpawner
+      value: 
+      objectReference: {fileID: 1885871625}
     - target: {fileID: 4004308512666717571, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.55
@@ -6731,10 +6760,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7734104011664440445, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
+      propertyPath: m_TagString
+      value: FirstGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2841866441720323007, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7734104011664440445, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 929482291}
   m_SourcePrefab: {fileID: 100100000, guid: d3bfb2eb35118cc4da913f8f4e1366a2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

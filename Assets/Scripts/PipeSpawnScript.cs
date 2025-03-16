@@ -35,7 +35,7 @@ public class PipeSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate ){
+        if (timer < spawnRate){
             // count the time
             timer += Time.deltaTime; // time.deltatime assure that behavios the same no metter which computer is running on
         }else{
