@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LogicTag
   - GameAreaTag
+  - FirstGun
   layers:
   - Default
   - TransparentFX
