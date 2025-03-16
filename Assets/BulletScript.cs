@@ -3,15 +3,11 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
 
-    [SerializeField]
-    private float bulletSpeed;
-
     public float bulletLife = 1f;
 
-    [SerializeField]
-    private float bulletRotation = 0f;
+    private float LIMIT = 23.02f;
 
-    public float speed = 1f;
+    public float speed;
 
     private Vector2 spawnPoint;
     private float timer = 0f;
@@ -24,7 +20,7 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > bulletLife){
+        if(transform.position.x >= LIMIT){
             Destroy(this.gameObject);
         }else{
             timer += Time.deltaTime;
@@ -32,10 +28,10 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    private Vector2 Movement(float timer){
+    private Vector3 Movement(float timer){
         float x = timer * speed * transform.right.x;
         float y = timer * speed * transform.right.y;
-        return new Vector2(x + spawnPoint.x, y + spawnPoint.y);
+        return new Vector3(x + spawnPoint.x, y + spawnPoint.y, transform.position.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
