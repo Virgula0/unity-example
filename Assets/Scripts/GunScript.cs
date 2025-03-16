@@ -28,7 +28,7 @@ public class GunScript : MonoBehaviour
         return this.pipeSpawner;
     }
 
-    public float getSpeed (){
+    public float getSpeed(){
         return this.speed;
     }
     
