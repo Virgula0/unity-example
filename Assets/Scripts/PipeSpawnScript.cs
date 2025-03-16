@@ -7,8 +7,6 @@ public class PipeSpawnScript : MonoBehaviour
     private float timer = 0;
     public float highOffset = 10;
 
-    private bool isActive = false;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,10 +35,6 @@ public class PipeSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive){
-            return;
-        }
-
         if (timer < spawnRate ){
             // count the time
             timer += Time.deltaTime; // time.deltatime assure that behavios the same no metter which computer is running on
@@ -48,9 +42,5 @@ public class PipeSpawnScript : MonoBehaviour
             SpawnFunction();
             timer = 0; // reset the timer
         }
-    }
-
-    public void setActive(){
-        this.isActive = !isActive;
     }
 }
